@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<html>
+    <head>
+        <title>Vue JS Sandbox</title>
+        <meta charset="UTF-8" />
+    </head>
 <body>
-    <script src="src.js"></script>
+    <div id="book">
+        <h2 v-on:click="toggleDetail">{{ title }}</h2>
+        <div id="bookDetail" v-show="showDetail">
+            <p>{{ author }}</p>
+            <p v-on:click="showTitle">{{ summary }}</p>
+        </div>
+    </div>
+    <div id="colors">
+        <ul>
+            <li v-bind:style="{color:color}" v-for="(color, index) in rainbow">
+                {{ index }} - {{ color }}
+            </li>
+            <!--
+          so long the instance name matches the one in the curlybraces you're fine.
+        -->
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="src/app.js"></script>
 </body>
+
 </html>
